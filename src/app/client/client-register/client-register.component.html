@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="d-flex justify-content-between align-items-center mt-5 mb-3">
+    <h2>Cadastrar novo cliente</h2>
+    <a routerLink="/client" class="btn btn-primary mb-3">Voltar à listagem</a>
+  </div>
+  <form>
+    <div class="form-group">
+      <label for="nome">Nome:</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="client.name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">E-mail:</label>
+      <input type="email" class="form-control" id="email" [(ngModel)]="client.email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="rua">Rua:</label>
+      <input type="text" class="form-control" id="street" [(ngModel)]="client.address.street" name="street">
+    </div>
+    <div class="form-group">
+      <label for="cidade">Cidade:</label>
+      <input type="text" class="form-control" id="city" [(ngModel)]="client.address.city" name="city">
+    </div>
+    <div class="form-group">
+      <label for="estado">Estado:</label>
+      <input type="text" class="form-control" id="state" [(ngModel)]="client.address.state" name="state">
+    </div>
+    <div class="form-group">
+      <label for="cep">Complemento:</label>
+      <input type="text" class="form-control" id="complement" [(ngModel)]="client.address.complement" name="complement">
+    </div>
+    <div class="form-group">
+      <label for="telefone">Telefone:</label>
+      <input type="text" class="form-control" id="telefone" [(ngModel)]="client.phone" name="telefone">
+    </div>
+    <button type="button" class="btn btn-primary" (click)="register()">Cadastrar</button>
+  </form>
+</div>

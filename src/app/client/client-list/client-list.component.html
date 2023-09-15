@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="d-flex justify-content-between align-items-center mt-5 mb-3">
+    <h2>Lista de Clientes</h2>
+    <a routerLink="/client/register" class="btn btn-primary mb-3">Cadastrar Novo Cliente</a>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>E-mail</th>
+        <th>Rua</th>
+        <th>Cidade</th>
+        <th>Estado</th>
+        <th>Complemento</th>
+        <th>Telefone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let client of clients">
+        <td>{{ client.name }}</td>
+        <td>{{ client.email }}</td>
+        <td>{{ client.address.street }}</td>
+        <td>{{ client.address.city }}</td>
+        <td>{{ client.address.state }}</td>
+        <td>{{ client.address.complement }}</td>
+        <td>{{ client.phone }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

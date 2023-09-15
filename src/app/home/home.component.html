@@ -1,0 +1,13 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let cardInfo of cardItems">
+      <app-card
+        [imageUrl]="cardInfo.imageUrl"
+        [title]="cardInfo.title"
+        [description]="cardInfo.description"
+        [buttonLink]="cardInfo.buttonLink"
+        [buttonText]="cardInfo.buttonText"
+      ></app-card>
+    </div>
+  </div>
+</div>
