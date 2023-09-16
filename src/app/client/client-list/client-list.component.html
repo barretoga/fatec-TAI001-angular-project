@@ -3,8 +3,8 @@
     <h2>Lista de Clientes</h2>
     <a routerLink="/client/register" class="btn btn-primary mb-3">Cadastrar Novo Cliente</a>
   </div>
-  <table class="table">
-    <thead>
+  <table class="table border">
+    <thead class="bg-primary text-white">
       <tr>
         <th>Nome</th>
         <th>E-mail</th>
@@ -13,6 +13,7 @@
         <th>Estado</th>
         <th>Complemento</th>
         <th>Telefone</th>
+        <th>Ações</th>
       </tr>
     </thead>
     <tbody>
@@ -24,6 +25,14 @@
         <td>{{ client.address.state }}</td>
         <td>{{ client.address.complement }}</td>
         <td>{{ client.phone }}</td>
+        <td>
+          <button class="btn btn-primary mr-2">
+            Editar
+          </button>
+          <button class="btn btn-danger">
+            Excluir
+          </button>
+        </td>
       </tr>
     </tbody>
   </table>

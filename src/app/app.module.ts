@@ -11,6 +11,8 @@ import { CardComponent } from './template/card/card.component';
 import { FooterComponent } from './template/footer/footer.component';
 import { HeaderComponent } from './template/header/header.component';
 import { ProductCreateComponent } from './product/product-create/product-create.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
+import { BreadcrumbComponent } from './template/breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { ProductCreateComponent } from './product/product-create/product-create.
     FooterComponent,
     HeaderComponent,
     ProductCreateComponent,
+    ProductListComponent,
+    BreadcrumbComponent,
   ],
   imports: [
     BrowserModule,
