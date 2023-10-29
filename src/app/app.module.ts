@@ -14,6 +14,8 @@ import { ProductCreateComponent } from './product/product-create/product-create.
 import { ProductListComponent } from './product/product-list/product-list.component';
 import { BreadcrumbComponent } from './template/breadcrumb/breadcrumb.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,8 @@ import { BreadcrumbComponent } from './template/breadcrumb/breadcrumb.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
