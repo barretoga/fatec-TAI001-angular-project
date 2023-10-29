@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BreadcrumbItem } from 'src/app/template/breadcrumb/breadcrumb.model';
-import { Product } from './product.model';
+import { ProductsService } from 'src/app/services/products.service';
+import { IProduct } from 'src/app/model/IProduct.model';
 
 @Component({
   selector: 'app-product-list',
@@ -17,16 +18,20 @@ export class ProductListComponent {
       }
     ]
   }
-  products: Product[] = [
-    {
-      name: "X-Tudo",
-      price: 39.90,
-      due_at: new Date().toLocaleDateString(),
-    },
-    {
-      name: "X-Salada",
-      price: 25.90,
-      due_at: new Date().toLocaleDateString(),
-    },
-  ]
+
+  products: IProduct[] = []
+
+  constructor(private productService: ProductsService) {
+
+  }
+  
+  ngOnInit(): void {
+    this.getData();
+  }
+
+  getData(): void {
+    this.productService.getProducts().subscribe(products => {
+      this.products = products;
+    })
+  }
 }

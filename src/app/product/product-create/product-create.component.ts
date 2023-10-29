@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Product } from '../product-list/product.model';
+import { IProduct } from 'src/app/model/IProduct.model';
 
 @Component({
   selector: 'app-product-create',
@@ -7,10 +7,10 @@ import { Product } from '../product-list/product.model';
   styleUrls: ['./product-create.component.css']
 })
 export class ProductCreateComponent {
-  product: Product = {
+  product: IProduct = {
     name: '',
     price: 0,
-    due_at: ''
+    due_at: '',
   }
 
   create() {
