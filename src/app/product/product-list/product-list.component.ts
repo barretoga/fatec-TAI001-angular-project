@@ -21,9 +21,7 @@ export class ProductListComponent {
 
   products: IProduct[] = []
 
-  constructor(private productService: ProductsService) {
-
-  }
+  constructor(private productService: ProductsService) {}
   
   ngOnInit(): void {
     this.getData();
