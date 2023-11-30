@@ -2,11 +2,12 @@
   <div class="row">
     <div class="col-md-4" *ngFor="let cardInfo of cardItems">
       <app-card
-        [imageUrl]="cardInfo.imageUrl"
-        [title]="cardInfo.title"
+        [name]="cardInfo.name"
+        [due_at]="cardInfo.due_at"
         [description]="cardInfo.description"
-        [buttonLink]="cardInfo.buttonLink"
-        [buttonText]="cardInfo.buttonText"
+        [quantity]="cardInfo.quantity"
+        [price]="cardInfo.price"
+        [image]="cardInfo.image"
       ></app-card>
     </div>
   </div>
