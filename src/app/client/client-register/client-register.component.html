@@ -5,7 +5,7 @@
   </div>
   <form>
     <div class="form-group">
-      <label for="nome">Nome:</label>
+      <label for="name">Nome:</label>
       <input type="text" class="form-control" id="name" [(ngModel)]="client.name" name="name" required>
     </div>
     <div class="form-group">
@@ -13,24 +13,36 @@
       <input type="email" class="form-control" id="email" [(ngModel)]="client.email" name="email" required>
     </div>
     <div class="form-group">
-      <label for="rua">Rua:</label>
+      <label for="street">Rua:</label>
       <input type="text" class="form-control" id="street" [(ngModel)]="client.address.street" name="street">
     </div>
     <div class="form-group">
-      <label for="cidade">Cidade:</label>
-      <input type="text" class="form-control" id="city" [(ngModel)]="client.address.city" name="city">
+      <label for="number">Número:</label>
+      <input type="text" class="form-control" id="number" [(ngModel)]="client.address.number" name="number">
     </div>
     <div class="form-group">
-      <label for="estado">Estado:</label>
-      <input type="text" class="form-control" id="state" [(ngModel)]="client.address.state" name="state">
-    </div>
-    <div class="form-group">
-      <label for="cep">Complemento:</label>
+      <label for="complement">Complemento:</label>
       <input type="text" class="form-control" id="complement" [(ngModel)]="client.address.complement" name="complement">
     </div>
     <div class="form-group">
-      <label for="telefone">Telefone:</label>
-      <input type="text" class="form-control" id="telefone" [(ngModel)]="client.phone" name="telefone">
+      <label for="neighborhood">Bairro:</label>
+      <input type="text" class="form-control" id="neighborhood" [(ngModel)]="client.address.neighborhood" name="neighborhood">
+    </div>
+    <div class="form-group">
+      <label for="city">Cidade:</label>
+      <input type="text" class="form-control" id="city" [(ngModel)]="client.address.city" name="city">
+    </div>
+    <div class="form-group">
+      <label for="state">Estado:</label>
+      <input type="text" class="form-control" id="state" [(ngModel)]="client.address.state" name="state">
+    </div>
+    <div class="form-group">
+      <label for="zip_code">CEP:</label>
+      <input type="text" class="form-control" id="zip_code" [(ngModel)]="client.address.zip_code" name="zip_code">
+    </div>
+    <div class="form-group">
+      <label for="phone">Telefone:</label>
+      <input type="text" class="form-control" id="phone" [(ngModel)]="client.phone" name="phone">
     </div>
     <button type="button" class="btn btn-success" (click)="register()">Cadastrar</button>
   </form>
