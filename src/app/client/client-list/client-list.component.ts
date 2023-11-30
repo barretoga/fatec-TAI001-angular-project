@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { IClient } from 'src/app/model/IClient.model';
+import { BreadcrumbItem } from 'src/app/template/breadcrumb/breadcrumb.model';
+import { ClientsService } from 'src/app/services/clients.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-client-list',
@@ -7,45 +11,37 @@ import { Component } from '@angular/core';
 })
 
 export class ClientListComponent {
-  clients: any[] = [
-    {
-      name: 'Fulano de Tal',
-      email: 'fulanodetal@email.com',
-      address: {
-        street: 'Rua dos bobos',
-        number: '0',
-        complement: 'apto 1',
-        neighborhood: 'Centro',
-        city: 'São Paulo',
-        state: 'SP'
-      },
-      phone: '(11) 99999-9999',
-    },
-    {
-      name: 'Beltrano da Silva',
-      email: 'beltrandasilva@email.com',
-      address: {
-        street: 'Rua dos bobos',
-        number: '0',
-        complement: 'apto 2',
-        neighborhood: 'Centro',
-        city: 'São Paulo',
-        state: 'SP'
-      },
-      phone: '(11) 99999-9999',
-    },
-    {
-      name: 'Ciclano Souza',
-      email: 'ciclanosouza@email.com',
-      address: {
-        street: 'Rua dos bobos',
-        number: '0',
-        complement: 'apto 3',
-        neighborhood: 'Centro',
-        city: 'São Paulo',
-        state: 'SP'
-      },
-      phone: '(11) 99999-9999',
-    }
-  ]
+  productListBreadcrumbs: BreadcrumbItem = {
+    activeItem: "Listar",
+    items: [
+      {
+        name: "Clientes",
+        link: "/client",
+      }
+    ]
+  }
+
+  clients: IClient[] = []
+
+  constructor(private clientService: ClientsService, private router: Router) {}
+
+  ngOnInit(): void {
+    this.getData();
+  }
+
+  getData(): void {
+    this.clientService.getClients().subscribe(clients => {
+      this.clients = clients;
+    })
+  }
+
+  deleteClient(id: number): void {
+    this.clientService.deleteClient(id).subscribe(() => {
+      this.getData();
+    })
+  }
+
+  updateClient(client: IClient): void {
+    this.router.navigate(['/client/update', client.id]);
+  }
 }
