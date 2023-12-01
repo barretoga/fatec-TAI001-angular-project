@@ -1,7 +1,23 @@
 <div class="container mt-3">
   <div class="row">
+    <div class="col-md-12 mb-4">
+      <h1 class="text-center">Lista de Produtos</h1>
+      <a
+        class="btn btn-success mr-2"
+        routerLink="product/create"
+      >
+        Cadastrar Produto
+      </a>
+      <a
+        class="btn btn-primary"
+        routerLink="product"
+      >
+        Listar Produtos
+      </a>
+    </div>
     <div class="col-md-4" *ngFor="let cardInfo of cardItems">
       <app-card
+        [id]="cardInfo.id"
         [name]="cardInfo.name"
         [due_at]="cardInfo.due_at"
         [description]="cardInfo.description"
@@ -11,4 +27,30 @@
       ></app-card>
     </div>
   </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-12 mb-4">
+      <h1 class="text-center">Lista de Clientes</h1>
+      <a
+        class="btn btn-success mr-2"
+        routerLink="client/register"
+      >
+        Cadastrar Cliente
+      </a>
+      <a
+        class="btn btn-primary"
+        routerLink="client"
+      >
+        Listar Clientes
+      </a>
+    </div>
+    <div class="col-md-4" *ngFor="let cardInfo of clientCardItems">
+      <app-client-card
+        [id]="cardInfo.id"
+        [name]="cardInfo.name"
+        [email]="cardInfo.email"
+        [address]="cardInfo.address"
+        [phone]="cardInfo.phone"
+      ></app-client-card>
+    </div>
 </div>
