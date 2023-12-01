@@ -1,0 +1,23 @@
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{ name }}</h5>
+    <p class="card-text">{{ email }}</p>
+    <p class="card-text">{{ address?.street }}</p>
+    <p class="card-text">{{ address?.city }}</p>
+    <p class="card-text">{{ address?.state }}</p>
+    <p class="card-text">{{ address?.complement }}</p>
+    <p class="card-text">{{ phone }}</p>
+    <a
+      class="btn btn-primary"
+      routerLink="client/update/{{ id }}"
+    >
+      Editar
+    </a>
+    <button 
+      class="btn btn-danger ml-2"
+      (click)="deleteClient(id)"
+    >
+      Excluir
+    </button>
+  </div>
+</div>

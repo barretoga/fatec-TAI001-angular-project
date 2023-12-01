@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="d-flex justify-content-between align-items-center mt-5 mb-3">
+    <h2>Editar produto</h2>
+    <a routerLink="/client" class="btn btn-primary mb-3">Voltar à listagem</a>
+  </div>
+  <form>
+    <div class="form-group">
+      <label for="name">Nome:</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="product.name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="description">Descrição:</label>
+      <textarea class="form-control" id="description" [(ngModel)]="product.description" name="description" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="price">Preço:</label>
+      <input type="number" class="form-control" id="price" [(ngModel)]="product.price" name="price" required>
+    </div>
+    <div class="form-group">
+      <label for="quantity">Quantidade:</label>
+      <input type="number" class="form-control" id="quantity" [(ngModel)]="product.quantity" name="quantity" required>
+    </div>
+    <div class="form-group">
+      <label for="due_at">Data:</label>
+      <input type="date" class="form-control" id="due_at" [(ngModel)]="product.due_at" name="due_at">
+    </div>
+    <div class="form-group">
+      <label for="image">Imagem URL:</label>
+      <input type="text" class="form-control" id="image" [(ngModel)]="product.image" name="image" required>
+    </div>
+    <button type="button" class="btn btn-success" (click)="edit()">Confirmar edição</button>
+  </form>
+</div>

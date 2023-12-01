@@ -13,8 +13,11 @@ import { HeaderComponent } from './template/header/header.component';
 import { ProductCreateComponent } from './product/product-create/product-create.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
 import { BreadcrumbComponent } from './template/breadcrumb/breadcrumb.component';
+import { ClientEditComponent } from './client/client-edit/client-edit.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { ClientCardComponent } from './template/client-card/client-card.component';
+import { ProductEditComponent } from './product/product-edit/product-edit.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { HttpClientModule } from '@angular/common/http';
     ProductCreateComponent,
     ProductListComponent,
     BreadcrumbComponent,
+    ClientEditComponent,
+    ClientCardComponent,
+    ProductEditComponent,
   ],
   imports: [
     BrowserModule,
