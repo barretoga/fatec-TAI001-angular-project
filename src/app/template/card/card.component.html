@@ -5,11 +5,23 @@
     <p class="card-text">{{ description }}</p>
     <p>
       <strong>Preço:</strong>
-      {{ price }}
+      R$ {{ price }}
     </p>
     <p>
       {{ quantity }} quantidades restantes
     </p>
     <a class="btn btn-primary">Comprar</a>
+    <a
+      class="btn btn-info ml-2"
+      routerLink="product/update/{{ id }}"
+    >
+      Editar
+    </a>
+    <button
+      class="btn btn-danger ml-2"
+      (click)="deleteProduct(id)"
+    >
+      Excluir
+    </button>
   </div>
 </div>
