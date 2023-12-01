@@ -26,10 +26,16 @@
         <td>{{ client.address.complement }}</td>
         <td>{{ client.phone }}</td>
         <td>
-          <button class="btn btn-primary mr-2">
+          <button
+            class="btn btn-primary mr-2"
+            routerLink="/client/update/{{ client.id }}"
+          >
             Editar
           </button>
-          <button class="btn btn-danger">
+          <button
+            class="btn btn-danger"
+            (click)="deleteClient(client.id)"
+          >
             Excluir
           </button>
         </td>

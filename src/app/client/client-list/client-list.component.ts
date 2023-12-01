@@ -35,10 +35,12 @@ export class ClientListComponent {
     })
   }
 
-  deleteClient(id: number): void {
-    this.clientService.deleteClient(id).subscribe(() => {
-      this.getData();
-    })
+  deleteClient(id: number | undefined): void {
+    if (id) {
+      this.clientService.deleteClient(id).subscribe(() => {
+        this.getData();
+      })
+    }
   }
 
   updateClient(client: IClient): void {
