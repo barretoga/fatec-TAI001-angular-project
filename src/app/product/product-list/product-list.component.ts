@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BreadcrumbItem } from 'src/app/template/breadcrumb/breadcrumb.model';
 import { ProductsService } from 'src/app/services/products.service';
 import { IProduct } from 'src/app/model/IProduct.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -21,7 +22,7 @@ export class ProductListComponent {
 
   products: IProduct[] = []
 
-  constructor(private productService: ProductsService) {}
+  constructor(private productService: ProductsService, private router: Router) {}
   
   ngOnInit(): void {
     this.getData();
@@ -31,5 +32,17 @@ export class ProductListComponent {
     this.productService.getProducts().subscribe(products => {
       this.products = products;
     })
+  }
+
+  deleteProduct(id: number | undefined): void {
+    if (id) {
+      this.productService.deleteProduct(id).subscribe(() => {
+        this.getData();
+      })
+    }
+  }
+
+  updateProduct(product: IProduct): void {
+    this.router.navigate(['/product/update', product.id]);
   }
 }
